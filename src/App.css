@@ -421,6 +421,75 @@ body {
   white-space: nowrap;
 }
 
+/* ── Mobile ─────────────────────────────── */
+@media (max-width: 600px) {
+  .setup-card {
+    padding: 32px 20px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    max-width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .app-header {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .app-header h1 {
+    font-size: 1rem;
+  }
+
+  .header-meta {
+    gap: 8px;
+  }
+
+  .vote-count {
+    display: none;
+  }
+
+  .btn-ghost {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .app-main {
+    flex-direction: column;
+  }
+
+  .vote-panel {
+    width: 100%;
+    max-height: 180px;
+    border-left: none;
+    border-top: 1px solid #2d3154;
+    flex-direction: column;
+  }
+
+  .vote-panel-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 8px;
+    gap: 8px;
+  }
+
+  .vote-group {
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .map-hint {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    bottom: 10px;
+  }
+}
+
 /* ── Scrollbar ──────────────────────────── */
 ::-webkit-scrollbar {
   width: 4px;

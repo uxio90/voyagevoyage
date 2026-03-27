@@ -89,11 +89,9 @@ export default function App() {
         <h1>Pito Pito Viajecito</h1>
         <div className="header-meta">
           <span className="user-badge" style={{ '--user-color': getUserColor(username) }}>
-            {username}
+            {username} · {userVoteCount}/{MAX_VOTES_PER_USER}
           </span>
-          <span className="vote-count">
-            {userVoteCount}/{MAX_VOTES_PER_USER} votos
-          </span>
+          <span className="vote-count">votos</span>
           <button className="btn-ghost" onClick={() => setUsername('')}>
             Cambiar usuario
           </button>
