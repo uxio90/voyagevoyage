@@ -79,11 +79,16 @@ export default function MapView({ votes, onMapClick, canVote }) {
         zoomSnap={0.1}
       >
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
           noWrap={true}
         />
         <FitWorld />
+        <TileLayer
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png"
+          noWrap={true}
+          zIndex={500}
+        />
         <ClickHandler onMapClick={onMapClick} canVote={canVote} />
         {votes.map(vote => (
           <Marker
