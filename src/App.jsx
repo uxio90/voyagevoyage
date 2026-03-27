@@ -19,6 +19,11 @@ function saveVotes(votes) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(votes))
 }
 
+function playFart() {
+  const audio = new Audio('/fart.webm')
+  audio.play()
+}
+
 export default function App() {
   const [username, setUsername] = useState('')
   const [votes, setVotes] = useState(loadVotes)
@@ -44,6 +49,12 @@ export default function App() {
       showToast(`${country} ya fue votado por ${taker.user}`)
       return
     }
+    if (['es', 'pt'].includes(countryCode.toLowerCase())) {
+      playFart()
+      showToast(`🚫 ${country} no cuenta 💨`)
+      return
+    }
+
     const newVote = {
       id: Date.now(),
       user: username,
