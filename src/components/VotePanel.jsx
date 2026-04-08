@@ -1,4 +1,4 @@
-export default function VotePanel({ votes, username, onRemove, onReset }) {
+export default function VotePanel({ votes, deviceId, onRemove, onReset }) {
   const grouped = votes.reduce((acc, vote) => {
     if (!acc[vote.user]) acc[vote.user] = []
     acc[vote.user].push(vote)
@@ -26,7 +26,7 @@ export default function VotePanel({ votes, username, onRemove, onReset }) {
                 <span className="vote-coords">
                   {vote.country || `${vote.lat.toFixed(2)}, ${vote.lng.toFixed(2)}`}
                 </span>
-                {user === username && (
+                {vote.deviceId === deviceId && (
                   <button
                     className="vote-remove"
                     onClick={() => onRemove(vote.id)}
